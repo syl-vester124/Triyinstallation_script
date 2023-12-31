@@ -1,0 +1,41 @@
+Trivy is a vulnerability scanner for container images. To install Trivy on an Ubuntu VM, you can follow these steps:
+
+Step 1: Update Package Lists
+Before installing any new software, it's a good practice to update the package lists on your system.
+
+bash
+Copy code
+sudo apt update
+Step 2: Install Trivy
+You can install Trivy on Ubuntu using a package manager called apt.
+
+bash
+Copy code
+sudo apt install -y trivy
+Step 3: Test Trivy
+Once the installation is complete, you can test Trivy by scanning a container image. For example:
+
+bash
+Copy code
+trivy image nginx:latest
+Replace nginx:latest with the name of the container image you want to scan.
+
+Step 4: Update Trivy Database
+Trivy uses a vulnerability database to perform scans. It's a good practice to regularly update this database.
+
+bash
+Copy code
+trivy --download-db
+Step 5: Scanning Docker Containers
+If you have Docker installed, you can scan your local Docker images using the following command:
+
+bash
+Copy code
+trivy image <image_name>
+Replace <image_name> with the name of your Docker image.
+
+Note:
+Ensure that you have the necessary privileges to install software on your VM (sudo).
+Keep in mind that Trivy is designed to work with container images, so you'll need Docker or a similar container runtime installed if you want to scan container images.
+Make sure your VM has internet access to download the Trivy database.
+These steps should help you install and use Trivy on your Ubuntu VM. If you encounter any issues or have specific requirements, refer to the official Trivy documentation for more detailed information.
